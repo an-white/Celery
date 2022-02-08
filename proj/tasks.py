@@ -1,0 +1,21 @@
+from .celery import app
+
+
+@app.task
+def add(x, y):
+    return x + y
+
+
+@app.task
+def mul(x, y):
+    return x * y
+
+
+@app.task
+def rest(x, y):
+    return x - y
+
+
+@app.task
+def n_add(numbers):
+    return sum(numbers)
