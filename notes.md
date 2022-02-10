@@ -4,7 +4,7 @@ broker la url specifica argumentada en
 
 concurrency por defecto es el numero de nucleos de la cpu del computador
 
-monitorear el projecto desde Flower con celery -A proj flower
+**monitorear el projecto desde Flower con celery -A proj flower**
 
 apply_async metodo en el cual puedo definir la cola de ejecucion (debe tener un worker asignado para que se ejecute)
 y el tiempo de espera para ejecutar la tarea
