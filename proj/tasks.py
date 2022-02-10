@@ -1,21 +1,21 @@
 import random
 import time
 
-from .celery import app
+from .main import app
 
 
 @app.task
-def too_long_task():
+def too_long_task(n):
     t = random.randint(4, 8)
     time.sleep(t)
-    return "long task done"
+    return f"task n:{n} long task done"
 
 
 @app.task
-def quick_task():
+def quick_task(n):
     t = random.randint(0, 3)
     time.sleep(t)
-    return "quick task done"
+    return f"task n:{n} quick task done"
 
 
 @app.task

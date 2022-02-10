@@ -1,4 +1,4 @@
-from celery import Celery
+from main import Celery
 
 """
 se necesita una instancia de celery
