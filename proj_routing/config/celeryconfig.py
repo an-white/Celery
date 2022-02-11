@@ -1,6 +1,7 @@
 # config for  celery
 broker_url = 'pyamqp://'
 result_backend = 'rpc://'
+result_persistent = False
 
 task_serializer = 'json'
 result_serializer = 'json'

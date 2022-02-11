@@ -10,3 +10,5 @@ celery -A <direccion.de.tarea.archivo_tareas> worker -l info -Q <nombre_de_la_co
 **ejecutar un beat**
 
 `celery -A tasks.tasks_1 beat -l info`
+
+celery multi start tasks.tasks_2 tasks.task_1 -c 3 -c:tasks.tasks_2,tasks.task_1 10

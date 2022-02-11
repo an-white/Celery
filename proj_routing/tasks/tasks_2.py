@@ -8,8 +8,9 @@ from config.main import app  # se importa la instacia de celery
 def setup_periodic_tasks(sender, **kwargs):
     sender.add_periodic_task(
         7.0,  # pulso en segundos
-        hello.s(),  # nombre de la tarea a ejecutar
-        name="task 1",  # un nombre como identificador en el log
+        add.s(6, 2),
+        # hello.s(),  # nombre de la tarea a ejecutar
+        name="task 2",  # un nombre como identificador en el log
     )
 
 
@@ -18,6 +19,11 @@ def hello():
     today = date.today()
 
     return "ola k ase--->", today.strftime("%d/%m/%Y %H:%M:%S")
+
+
+@app.task
+def add(x, y):
+    return x + y
 
 
 @app.task

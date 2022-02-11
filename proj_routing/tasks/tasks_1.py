@@ -4,7 +4,7 @@ from config.main import app
 @app.on_after_configure.connect
 def setup_periodic_tasks(sender, **kwargs):
     sender.add_periodic_task(
-        10.0,
+        1,
         task_1.s(3, 4),
         name="task_1",
     )
