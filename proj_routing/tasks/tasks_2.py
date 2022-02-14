@@ -17,7 +17,6 @@ def setup_periodic_tasks(sender, **kwargs):
 @app.task
 def hello():
     today = date.today()
-
     return "ola k ase--->", today.strftime("%d/%m/%Y %H:%M:%S")
 
 
